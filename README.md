@@ -1,1 +1,1 @@
-# -edulog_photography_platform
+# edulog_photography_platform
