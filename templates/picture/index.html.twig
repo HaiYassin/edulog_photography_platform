@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Picture List{% endblock %}
+
+{% block body %}
+    <h1>Picture list</h1>
+
+    {% for picture in pictures %}
+        <div>
+            <a href="{{ path('picture_show', {'id': picture.id}) }}">
+                <img src="/images/pictures/{{ picture.fileName }}" alt="{{ picture.fileName }}" height="80px" width="80px">
+            </a>
+        </div>
+    {% else %}
+        <tr>
+            <td colspan="6">no records found</td>
+        </tr>
+    {% endfor %}
+
+    <a href="{{ path('picture_new') }}">Upload a new jpeg picture</a>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Picture{% endblock %}
+
+{% block body %}
+    <h1>Picture</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Original Size</th>
+                <td><img src="/images/pictures/{{ picture.fileName }}" alt="{{ picture.fileName }}"></td>
+            </tr>
+            <tr>
+                <th>800px Height Size</th>
+                <td><img src="/images/pictures/{{ picture.fileName }}" alt="{{ picture.fileName }}" height="800px"></td>
+            </tr>
+            <tr>
+                <th>Miniature Size</th>
+                <td><img src="/images/pictures/{{ picture.fileName }}" alt="{{ picture.fileName }}" height="80px" width="80px"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('picture_index') }}">back to list</a>
+
+    <a href="{{ path('picture_edit', {'id': picture.id}) }}">edit the picture</a>
+
+    {{ include('picture/_delete_form.html.twig') }}
+{% endblock %}
